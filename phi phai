@@ -11,7 +11,7 @@ bav.AngularVelocity = Vector3.new()
 bav.MaxTorque = Vector3.new(1/0, 1/0, 1/0)
 bav.Name = "bAV" 
 for _,v in next, workspace:GetDescendants() do
-    if v.Name:find("Fruit") then
+    if v.Name:find("StartPoint") then
         pcall(function()
             repeat 
                 local anc1 = bv:Clone()
@@ -20,7 +20,7 @@ for _,v in next, workspace:GetDescendants() do
                 anc2.Parent = chr.HumanoidRootPart
                 local p = t:Create(chr.HumanoidRootPart, TweenInfo.new((plr:DistanceFromCharacter(v.Position)-150)/320, Enum.EasingStyle.Linear), {CFrame=v.CFrame + Vector3.new(0, v.Size.Y, 0)})
                 p:Play()
-                p.Completed:Wait()
+                p.Completed:Stop()
                 chr.HumanoidRootPart.CFrame = v.CFrame
                 anc1:Destroy()
                 anc2:Destroy()
