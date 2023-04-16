@@ -436,7 +436,7 @@ function Lib:Window(text,img)
     
     
     UserInputService.InputBegan:Connect(function(input)
-		if input.KeyCode == Enum.KeyCode.RightControl then
+		if input.KeyCode == Enum.KeyCode.NumLock then
 			if uihide == false then
 				uihide = true
                 pcall(Main:TweenSize(UDim2.new(0, 0, 0, 0),"In","Quad",0.4,true))
