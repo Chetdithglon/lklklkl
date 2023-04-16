@@ -1,3 +1,49 @@
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local UIGradient = Instance.new("UIGradient")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.Position = UDim2.new(0.154057801, 0, 0.228764698, 0)
+ImageButton.Size = UDim2.new(0, 57, 0, 52)
+ImageButton.Image = "rbxassetid://11991152983"
+
+UICorner.Parent = ImageButton
+
+UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Thickness = 3
+UIStroke.Parent = ImageButton
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(0.13, Color3.fromRGB(255, 93, 255)), ColorSequenceKeypoint.new(0.28, Color3.fromRGB(92, 95, 255)), ColorSequenceKeypoint.new(0.44, Color3.fromRGB(74, 255, 240)), ColorSequenceKeypoint.new(0.61, Color3.fromRGB(152, 255, 96)), ColorSequenceKeypoint.new(0.78, Color3.fromRGB(239, 255, 62)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 90, 78))}
+UIGradient.Parent = UIStroke
+
+-- Scripts:
+
+local function VVOJSC_fake_script() -- ImageButton.LocalScript 
+
+
+	ImageButton.MouseButton1Down:Connect(function()
+		game:GetService("VirtualInputManager"):SendKeyEvent(true, "NumLock" , false , game)
+	end)
+end
+coroutine.wrap(VVOJSC_fake_script)()
+local function DCLSA_fake_script() -- UIGradient.LocalScript 
+	local script = Instance.new('LocalScript', UIGradient)
+
+	
+	local TweenService = game:GetService("TweenService")
+	local tweeninfo = TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
+	local tween = TweenService:Create(script.Parent, tweeninfo, {Rotation = 360})
+	tween:Play()
+	
+end
+coroutine.wrap(DCLSA_fake_script)()
 --local keo = Page:Slider("text",100,500,100,function(t) --Thanh kéo
 do  local ui =  game:GetService("CoreGui"):FindFirstChild("Ui Native Hub")  if ui then ui:Destroy() end end
 
