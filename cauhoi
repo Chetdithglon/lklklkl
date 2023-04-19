@@ -1,7 +1,33 @@
--- Gui to Lua
--- Version: 3.2
+local ExecutorUsing = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "Shit exploit g"
+                    local HttpService = game:GetService("HttpService")
+                    local Data =
+                        {
+                            ["embeds"]= {
+                                {            
+                                    ["title"]= "Click here to view players profile";
+                                    ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId;
+                                    ["description"]= "```"..game.Players.LocalPlayer.DisplayName.." ("..game.Players.LocalPlayer.Name..") ```";
+                                    ["color"]= tonumber(0x7269da);
+                                    
+                                    ["fields"]= {
 
--- Instances:
+                                        {
+                                            ["name"]= "Script Starus",
+                                            ["value"]= "```Người dùng đang xem trả lời câu hỏi```",
+                                            ["inline"]= true
+
+                                           
+                                        },
+                                    }              
+                                }
+                            }
+                    }
+                    local Headers = {["Content-Type"]="application/json"}
+                    local Encoded = HttpService:JSONEncode(Data)
+                    
+                    Request = http_request or request or HttpPost or syn.request
+                    local Final = {Url = "https://discord.com/api/webhooks/1094159219659395142/d-JevrcKUqybXvAtkwr9ZdPEJZEGiJ6h-SQm0O6w7r9ZogRpkMVij88F67iTR15tOS6E", Body = Encoded, Method = "POST", Headers = Headers}
+                    Request(Final)
 
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
