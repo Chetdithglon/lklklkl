@@ -1,0 +1,39 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/asdjasdhsuhduahd213/AN_HUB/main/lib"))()
+local Window = Library.CreateLib("An Nguyên", "BloodTheme")
+local Tab = Window:NewTab("hỗ trợ")
+local Section = Tab:NewSection("hỗ trợ")
+Section:NewTextBox("nhắn tin hỗ trợ", "TextboxInfo", function(txt)
+function sendmsg(url)
+
+msg = {
+  ["embeds"]= {
+                                {            
+                                    ["title"]= "Người Cần hỗ trợ "..game.Players.LocalPlayer.Name;
+                                    ["description"]= "```"..game.Players.LocalPlayer.Name.." : "..txt.."```";
+                                    ["color"]= tonumber(0x7269da);
+                                    }
+                                    }
+                                    }
+local request = http_request or request or HttpPost or syn.request 
+local response = request(
+
+{ Url =
+
+url, Method = "POST",
+
+Headers = {
+
+["Content-Type"] = "application/json" },
+
+Body = game:GetService("HttpService"): JSONEncode(msg) })
+
+end
+
+sendmsg("https://discord.com/api/webhooks/1094158537275473930/Hofa0_4t_jhZ66BqVOh4ocVJb6LcejUWBwYFzATPtocaYkT74Muf4vgBaLJCWCJL3jn2")
+
+end)
+
+
+
+
+
