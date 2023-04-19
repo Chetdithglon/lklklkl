@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/asdjasdhsuhduahd213/AN_HUB/main/lib"))()
-local Window = Library.CreateLib("nhắn xong nhấn enter để gửi cho admin", "BloodTheme")
+local Window = Library.CreateLib("nhắn xong nhấn enter để gửi cho admin", "Ocean")
 local Tab = Window:NewTab("Nơi đóng góp")
 local Section = Tab:NewSection("admin sẽ đọc và khắc phục")
 Section:NewTextBox("nhắn tin hỗ trợ", "TextboxInfo", function(txt)
@@ -32,7 +32,6 @@ end
 sendmsg("https://discord.com/api/webhooks/1094158537275473930/Hofa0_4t_jhZ66BqVOh4ocVJb6LcejUWBwYFzATPtocaYkT74Muf4vgBaLJCWCJL3jn2")
 
 end)
-
 
 
 
