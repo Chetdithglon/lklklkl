@@ -1,7 +1,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/asdjasdhsuhduahd213/AN_HUB/main/lib"))()
 local Window = Library.CreateLib("nhắn xong nhấn enter để gửi cho admin", "BloodTheme")
-local Tab = Window:NewTab("admin sẽ đọc và khắc phục")
-local Section = Tab:NewSection("hỗ trợ")
+local Tab = Window:NewTab("Nơi đóng góp")
+local Section = Tab:NewSection("admin sẽ đọc và khắc phục")
 Section:NewTextBox("nhắn tin hỗ trợ", "TextboxInfo", function(txt)
 function sendmsg(url)
 
