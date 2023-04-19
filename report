@@ -30,9 +30,12 @@ Body = game:GetService("HttpService"): JSONEncode(msg) })
 end
 
 sendmsg("https://discord.com/api/webhooks/1094158537275473930/Hofa0_4t_jhZ66BqVOh4ocVJb6LcejUWBwYFzATPtocaYkT74Muf4vgBaLJCWCJL3jn2")
-
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "Mạnh Dũng";
+    Text = "tin nhắn đã đc gửi";
+    Icon = "rbxassetid://13184719025"})
+Duration = 5;
 end)
-
 
 
 
