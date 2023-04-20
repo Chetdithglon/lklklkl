@@ -78,7 +78,7 @@ cuhi1.BackgroundColor3 = Color3.fromRGB(217, 217, 217)
 cuhi1.Position = UDim2.new(0.0784352943, 0, 0.0947683454, 0)
 cuhi1.Size = UDim2.new(0.84458077, 0, 0.0558823533, 0)
 cuhi1.Font = Enum.Font.SourceSans
-cuhi1.Text = "tecnoservice1k : thêm aimbot đi"
+cuhi1.Text = "dulsvumasbp : discord ở đâu"
 cuhi1.TextColor3 = Color3.fromRGB(0, 0, 0)
 cuhi1.TextSize = 14.000
 
@@ -93,7 +93,7 @@ trli1.BackgroundColor3 = Color3.fromRGB(226, 226, 226)
 trli1.Position = UDim2.new(0.0777096078, 0, 0.17058824, 0)
 trli1.Size = UDim2.new(0.846625745, 0, 0.0764705911, 0)
 trli1.Font = Enum.Font.SourceSans
-trli1.Text = "oke em nào a update"
+trli1.Text = "Ib t đưa nhé"
 trli1.TextColor3 = Color3.fromRGB(0, 0, 0)
 trli1.TextSize = 14.000
 
