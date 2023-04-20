@@ -138,7 +138,7 @@ trli4.BackgroundColor3 = Color3.fromRGB(226, 226, 226)
 trli4.Position = UDim2.new(0.0797546059, 0, 0.84117651, 0)
 trli4.Size = UDim2.new(0.840490818, 0, 0.0794117674, 0)
 trli4.Font = Enum.Font.SourceSans
-trli4.Text = "Ảnh nào v e"
+trli4.Text = "có fix lag siêu cấp mà e"
 trli4.TextColor3 = Color3.fromRGB(0, 0, 0)
 trli4.TextSize = 14.000
 
@@ -183,7 +183,7 @@ cuhi4.BackgroundColor3 = Color3.fromRGB(217, 217, 217)
 cuhi4.Position = UDim2.new(0.0784352943, 0, 0.7653566, 0)
 cuhi4.Size = UDim2.new(0.84458077, 0, 0.0558823533, 0)
 cuhi4.Font = Enum.Font.SourceSans
-cuhi4.Text = "baodeptrai09125 : để lại ảnh cũ đi anh :))"
+cuhi4.Text = "noobyuomh : anh thêm fig lag treo sever đi"
 cuhi4.TextColor3 = Color3.fromRGB(0, 0, 0)
 cuhi4.TextSize = 14.000
 
