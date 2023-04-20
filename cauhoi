@@ -108,7 +108,7 @@ trli2.BackgroundColor3 = Color3.fromRGB(226, 226, 226)
 trli2.Position = UDim2.new(0.0777096078, 0, 0.394117653, 0)
 trli2.Size = UDim2.new(0.840490818, 0, 0.0764705911, 0)
 trli2.Font = Enum.Font.SourceSans
-trli2.Text = "Hog biết làm =))"
+trli2.Text = "T đang cố làm 1 script auto zo sv đảo bí ẩn"
 trli2.TextColor3 = Color3.fromRGB(0, 0, 0)
 trli2.TextSize = 14.000
 
@@ -153,7 +153,7 @@ cuhi2.BackgroundColor3 = Color3.fromRGB(217, 217, 217)
 cuhi2.Position = UDim2.new(0.0784352943, 0, 0.312415421, 0)
 cuhi2.Size = UDim2.new(0.84458077, 0, 0.0558823533, 0)
 cuhi2.Font = Enum.Font.SourceSans
-cuhi2.Text = "HPK1235 : lam hack kinglegacy di"
+cuhi2.Text = "sarchinilu : ai giúp t treo đảo bí ẩn với "
 cuhi2.TextColor3 = Color3.fromRGB(0, 0, 0)
 cuhi2.TextSize = 14.000
 
