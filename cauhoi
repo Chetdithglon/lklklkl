@@ -78,7 +78,7 @@ cuhi1.BackgroundColor3 = Color3.fromRGB(217, 217, 217)
 cuhi1.Position = UDim2.new(0.0784352943, 0, 0.0947683454, 0)
 cuhi1.Size = UDim2.new(0.84458077, 0, 0.0558823533, 0)
 cuhi1.Font = Enum.Font.SourceSans
-cuhi1.Text = "dulsvumasbp : discord ở đâu"
+cuhi1.Text = "lười trả lời"
 cuhi1.TextColor3 = Color3.fromRGB(0, 0, 0)
 cuhi1.TextSize = 14.000
 
@@ -102,13 +102,13 @@ UICorner_3.Parent = trli1
 UIAspectRatioConstraint_2.Parent = trli1
 UIAspectRatioConstraint_2.AspectRatio = 15.923
 
-trli2.Name = "trả lời 2"
+trli2.Name = "lười trả lời"
 trli2.Parent = Frame
 trli2.BackgroundColor3 = Color3.fromRGB(226, 226, 226)
 trli2.Position = UDim2.new(0.0777096078, 0, 0.394117653, 0)
 trli2.Size = UDim2.new(0.840490818, 0, 0.0764705911, 0)
 trli2.Font = Enum.Font.SourceSans
-trli2.Text = "r mà em ở bên discord á cần thì ib a đưa link"
+trli2.Text = "lười trả lời"
 trli2.TextColor3 = Color3.fromRGB(0, 0, 0)
 trli2.TextSize = 14.000
 
@@ -123,7 +123,7 @@ trli3.BackgroundColor3 = Color3.fromRGB(226, 226, 226)
 trli3.Position = UDim2.new(0.0777096078, 0, 0.611764729, 0)
 trli3.Size = UDim2.new(0.840490818, 0, 0.08529412, 0)
 trli3.Font = Enum.Font.SourceSans
-trli3.Text = "Ok á tầm mai thêm 1 script vip nha"
+trli3.Text = "lười trả lời"
 trli3.TextColor3 = Color3.fromRGB(0, 0, 0)
 trli3.TextSize = 14.000
 
@@ -138,7 +138,7 @@ trli4.BackgroundColor3 = Color3.fromRGB(226, 226, 226)
 trli4.Position = UDim2.new(0.0797546059, 0, 0.84117651, 0)
 trli4.Size = UDim2.new(0.840490818, 0, 0.0794117674, 0)
 trli4.Font = Enum.Font.SourceSans
-trli4.Text = "có fix lag siêu cấp mà e"
+trli4.Text = "lười trả lời"
 trli4.TextColor3 = Color3.fromRGB(0, 0, 0)
 trli4.TextSize = 14.000
 
@@ -153,7 +153,7 @@ cuhi2.BackgroundColor3 = Color3.fromRGB(217, 217, 217)
 cuhi2.Position = UDim2.new(0.0784352943, 0, 0.312415421, 0)
 cuhi2.Size = UDim2.new(0.84458077, 0, 0.0558823533, 0)
 cuhi2.Font = Enum.Font.SourceSans
-cuhi2.Text = "phigutboy002 : anh cho bản tìm svv full mom đi ah "
+cuhi2.Text = "lười trả lời "
 cuhi2.TextColor3 = Color3.fromRGB(0, 0, 0)
 cuhi2.TextSize = 14.000
 
@@ -168,7 +168,7 @@ cuhi3.BackgroundColor3 = Color3.fromRGB(217, 217, 217)
 cuhi3.Position = UDim2.new(0.0784352943, 0, 0.535944819, 0)
 cuhi3.Size = UDim2.new(0.84458077, 0, 0.0558823533, 0)
 cuhi3.Font = Enum.Font.SourceSans
-cuhi3.Text = "l4k9bkjkCqJ : thêm scirp xịn di"
+cuhi3.Text = "lười trả lời"
 cuhi3.TextColor3 = Color3.fromRGB(0, 0, 0)
 cuhi3.TextSize = 14.000
 
@@ -183,7 +183,7 @@ cuhi4.BackgroundColor3 = Color3.fromRGB(217, 217, 217)
 cuhi4.Position = UDim2.new(0.0784352943, 0, 0.7653566, 0)
 cuhi4.Size = UDim2.new(0.84458077, 0, 0.0558823533, 0)
 cuhi4.Font = Enum.Font.SourceSans
-cuhi4.Text = "noobyuomh : anh thêm fig lag treo sever đi"
+cuhi4.Text = "lười trả lời"
 cuhi4.TextColor3 = Color3.fromRGB(0, 0, 0)
 cuhi4.TextSize = 14.000
 
