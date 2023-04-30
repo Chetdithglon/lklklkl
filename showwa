@@ -1,6 +1,6 @@
 
 -- // key script and link get key
-_G.key = "andzvaio"
+_G.key = "show"
 _G.linkkey = "https://www.facebook.com/nguyenanutgr"
 _G.tt = "20k 3 ngày"
 
@@ -310,6 +310,14 @@ load_l.BorderColor3 = Color3.fromRGB(250, 250, 250)
 load_l.TextSize = 14.000
 load_l.MouseButton1Down:connect(function()
 game.CoreGui.UIGUI:Destroy()
-G.wl_key = '2718e31e679c23944b8c7ce0a3fd988eb2d6d0fe'
-loadstring(game:HttpGet('https://keshhub.xyz/.earlyaccess', true))()
+if _G.wl_key then
+    return
+end
+--Do not execute any scripts before running the script
+--Put Your Key Between "" at the _G.wl_key
+_G.wl_key = "340a01892b35423ea22862aaad33fdd950ad50eb"
+repeat wait()
+until game:IsLoaded()
+wait(2)
+loadstring(game:HttpGet('https://scripts.luawl.com/hosted/1989/Misc.lua'))()
 end)
