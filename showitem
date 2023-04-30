@@ -1,224 +1,362 @@
-local cac = require(game:GetService("Players").LocalPlayer.PlayerGui.Main.UIController.Inventory)
-local Inventory = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")
-local Items = {}
-local RaityLevel = {"Mythical","Legendary","Rare","Uncommon","Common"}
-local RaityColor =  {
-    ["Common"] = Color3.fromRGB(179, 179, 179),
-    ["Uncommon"] = Color3.fromRGB(92, 140, 211),
-    ["Rare"] =  Color3.fromRGB(140, 82, 255),
-    ["Legendary"] = Color3.fromRGB(213, 43, 228) ,
-    ["Mythical"] =  Color3.fromRGB(238, 47, 50)
-}
-function GetRaity(color)
-    for k,v in pairs(RaityColor) do 
-        if v==color then return k end
-    end
-end
 
-for k,v in pairs(Inventory) do 
-    Items[v.Name] = v
-end
+-- // key script and link get key
+_G.key = "show"
+_G.linkkey = "https://www.facebook.com/nguyenanutgr"
+_G.tt = "20k 3 ngày"
 
-local total = #getupvalue(cac.UpdateRender,4)
-local rac = {}
-local allitem = {}
-local total2 = 0
-while total2<total do 
-    local i = 0
-    while i < 25000 and total2<total do 
-        game:GetService("Players").LocalPlayer.PlayerGui.Main.InventoryContainer.Right.Content.ScrollingFrame.CanvasPosition = Vector2.new(0,i)
-        for k,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main.InventoryContainer.Right.Content.ScrollingFrame.Frame:GetChildren()) do 
-            if v:IsA("Frame") and not rac[v.ItemName.Text] and v.ItemName.Visible==true then 
-                local vaihuhu = GetRaity(v.Background.BackgroundColor3)
-                if vaihuhu then
-                    print("Rac")
-                    if not allitem[vaihuhu] then 
-                        allitem[vaihuhu] = {}
-                    end
-                    table.insert(allitem[vaihuhu],v:Clone())
-                end
-                total2=total2+1
-                rac[v.ItemName.Text] = true
-            end
-        end
-        i=i+20
-    end
-    wait()
-end
-function GetXY(vec) 
-    return vec*100
-end
-
-local tvk = Instance.new("UIListLayout")
-tvk.FillDirection = Enum.FillDirection.Vertical
-tvk.SortOrder = 2
-tvk.Padding = UDim.new(0,20)
-
-local Left = Instance.new("Frame",game.Players.LocalPlayer.PlayerGui.BubbleChat)
-Left.BackgroundTransparency = 1
-Left.Size = UDim2.new(.5,0,1,0) 
-tvk.Parent = Left
-
-local Right = Instance.new("Frame",game.Players.LocalPlayer.PlayerGui.BubbleChat)
-Right.BackgroundTransparency = 1
-Right.Size = UDim2.new(.5,0,1,0) 
-Right.Position = UDim2.new(.6,0,0,0)
-Right.Name = "Right"
-tvk:Clone().Parent = Right
-local bucac
-for k,v in pairs(allitem) do 
-    local cac = Instance.new("Frame",Left)
-    cac.BackgroundTransparency = 1
-    cac.Size = UDim2.new(1,0,0,0) 
-    cac.LayoutOrder = table.find(RaityLevel,k)
-
-    local cac2 = Instance.new("Frame",Right)
-    cac2.BackgroundTransparency = 1
-    cac2.Size = UDim2.new(1,0,0,0) 
-    cac2.LayoutOrder = table.find(RaityLevel,k)
+local UIGUI = Instance.new("ScreenGui")
+main= Instance.new("Frame")
+ UImain = Instance.new("UICorner")
+ UIbar1 = Instance.new("UICorner")
+ UIbar2 = Instance.new("UICorner")
+ UIbar3 = Instance.new("UICorner")
+ UIbar4 = Instance.new("UICorner")
  
+ UIbar= Instance.new("UICorner")
+ bar =Instance.new("TextLabel")
+ exit = Instance.new("TextButton")
+bar_1=Instance.new("TextLabel")
+bar_2=Instance.new("Frame")
+bar_3=Instance.new("Frame")
+bar_4=Instance.new("Frame")
+t_1 =Instance.new("TextLabel")
+t_2 =Instance.new("TextLabel")
 
-    local tvk = Instance.new("UIGridLayout",cac)
-    tvk.CellPadding = UDim2.new(.005,0,.005,0)
-    tvk.CellSize =  UDim2.new(0,70,0,70)
-    tvk.FillDirectionMaxCells = 100
-    tvk.FillDirection = Enum.FillDirection.Horizontal
+tt_name=Instance.new("TextLabel")
+tt_1=Instance.new("TextLabel")
 
-    local ccc = tvk:Clone()
-    ccc.Parent = cac2
-    for k,v in pairs(v) do 
-        if Items[v.ItemName.Text] and Items[v.ItemName.Text].Mastery then 
-            if v.ItemLine2.Text~="Accessory" then 
-                bucac = v.ItemName:Clone()
-                bucac.BackgroundTransparency = 1
-                bucac.TextSize = 10
-                bucac.TextXAlignment  = 2
-                bucac.TextYAlignment  = 2
-                bucac.ZIndex  = 5
-                bucac.Text = Items[v.ItemName.Text].Mastery
-                bucac.Size = UDim2.new(.5,0,.5,0)
-                bucac.Position = UDim2.new(.5,0,.5,0)
-                bucac.Parent = v
-            end
-            v.Parent = cac
-        elseif v.ItemLine2.Text == "Blox Fruit" then 
-            v.Parent = cac2
-        end
-    end
-    cac.AutomaticSize = 2
-    cac2.AutomaticSize = 2
-end
+key_t=Instance.new("TextLabel")
+key_tb =Instance.new("TextBox")
+key_b =Instance.new("TextButton")
+key_g =Instance.new("TextButton")
 
-local MeleeG = Instance.new("Frame",Right)
-MeleeG.BackgroundTransparency = 1
-MeleeG.Size = UDim2.new(1,0,0,0) 
-MeleeG.LayoutOrder = table.find(RaityLevel,k)
-MeleeG.AutomaticSize=2
-MeleeG.LayoutOrder = 100
-local tvk = Instance.new("UIGridLayout",MeleeG)
-tvk.CellPadding = UDim2.new(.005,0,.005,0)
-tvk.CellSize =  UDim2.new(0,70,0,70)
-tvk.FillDirectionMaxCells = 100
-tvk.FillDirection = Enum.FillDirection.Horizontal
-local ListHuhu = {
-    ["Superhuman"] = Vector2.new(3,2),
-    ["DeathStep"] = Vector2.new(4,3),
-    ["ElectricClaw"] = Vector2.new(2,0),
-    ["SharkmanKarate"] = Vector2.new(0,0),
-    ["DragonTalon"] = Vector2.new(1,5),
-    ["Godhuman"] = "rbxassetid://10338473987"
-}
-local nguu = {}
-function GetNext() end
-local Listcaiditconmemayskidconcaca = {}
-local buda
+load_t=Instance.new("TextLabel")
+load_t1=Instance.new("TextLabel")
+load_t2=Instance.new("TextLabel")
+load_l=Instance.new("TextButton")
+load_b1=Instance.new("TextButton")
+load_b2=Instance.new("TextButton")
 
-for k,v in pairs(ListHuhu) do
-    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buy"..k,true) == 1 then 
-        local huhu = Instance.new("ImageLabel",MeleeG)
-        if type(v)=="string" then 
-            huhu.Image = v
-        else
-            huhu.Image = "rbxassetid://9945562382"
-            huhu.ImageRectSize = Vector2.new(100,100)
-            huhu.ImageRectOffset = v*100
-        end 
-        Listcaiditconmemayskidconcaca[k] = huhu
-        table.insert(nguu,k)
-    end
-end
-buda = 1
-function TimKiemItemNehuhu(item)
-    for k,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do 
-        if v.Name:gsub(" ","") == item then 
-            return v
-        end
-    end
-end
-spawn(function() 
-    local a = #nguu
-    local bucu = 0
-    while bucu < a do 
-        for k,v in pairs(Listcaiditconmemayskidconcaca) do 
-            if not v:FindFirstChild("Ditme") then 
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buy"..k) 
-                wait(.1)
-                local v2 = TimKiemItemNehuhu(k)
-                if v2 then 
-                    v2:WaitForChild("Level")
-                    local Ditme = bucac:Clone()
-                    Ditme.Name = "Ditme"
-                    Ditme.BackgroundTransparency = 1
-                    Ditme.TextSize = 10
-                    Ditme.TextXAlignment  = 2
-                    Ditme.TextYAlignment  = 2
-                    Ditme.ZIndex  = 5
-                    Ditme.Text = v2.Level.Value
-                    Ditme.Size = UDim2.new(.5,0,.5,0)
-                    Ditme.Position = UDim2.new(.5,0,.5,0)
-                    Ditme.Parent = v
-                    bucu=bucu+1
-                end
-            end
-        end
-        wait()
-    end
 
+
+UIGUI.Name = "UIGUI"
+UIGUI.Parent = game:WaitForChild("CoreGui")
+UIGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+main.Name = "main"
+main.Parent = UIGUI
+main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+main.Position = UDim2.new(0.258126051, 0, 0.228999169, 0)
+main.Size = UDim2.new(0, 500, 0, 200)
+main.BackgroundTransparency = 0.7
+UImain.Parent = main
+
+bar.Parent = main
+bar.BackgroundColor3 = Color3.fromRGB(5, 5, 5)
+bar.Size = UDim2.new(0, 498, 0, 30)
+bar.BorderColor3 = Color3.fromRGB(250, 250, 250)
+bar.Font = Enum.Font.Ubuntu
+bar.Text = "    Nguyễn An | Key"
+bar.TextColor3 = Color3.fromRGB(255, 255, 255)
+bar.TextSize = 14.000
+bar.TextWrapped = true
+bar.TextXAlignment = Enum.TextXAlignment.Left
+UIbar.Parent = bar
+
+exit.Name = "exit"
+exit.Parent = bar
+exit.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+exit.Position = UDim2.new(0.940000000, 0, 0.000000000, 0)
+exit.Size = UDim2.new(0, 30, 0, 30)
+exit.Font = Enum.Font.Ubuntu
+exit.Text = "X"
+exit.TextColor3 = Color3.fromRGB(250, 255, 250)
+exit.BackgroundTransparency = 1
+exit.TextSize = 20.000
+exit.BorderColor3 = Color3.fromRGB(250, 250, 250)
+exit.MouseButton1Down:connect(function()
+game.CoreGui.UIGUI:Destroy()
 end)
-game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
-repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.TopContainer.Frame:FindFirstChild("Z")
-local rac = game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler:Clone()
-rac.LayoutOrder = 101
-game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = false
 
-rac.Parent = Right
-rac.Size = UDim2.new(1,0,0.3,0)
-function formatNumber(v)
-    return tostring(v):reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
+bar_1.Name = "bar_1"
+bar_1.Parent = main
+bar_1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+bar_1.Position = UDim2.new(0.000000000, 0, 0.180000000, 0)
+bar_1.Size = UDim2.new(0, 120, 0, 160)
+bar_1.Font = Enum.Font.Ubuntu
+bar_1.Text = "Có key chưa mà xài"
+bar_1.TextColor3 = Color3.fromRGB(255, 255, 255)
+bar_1.TextSize = 14.000
+bar_1.TextWrapped = true
+bar_1.TextYAlignment = Enum.TextYAlignment.Top
+UIbar1.Parent = bar_1
+
+bar_2.Name = "bar_2"
+bar_2.Parent = main
+bar_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+bar_2.Position = UDim2.new(0.250000000, 0, 0.180000000, 0)
+bar_2.Size = UDim2.new(0, 248, 0, 160)
+UIbar2.Parent = bar_2
+
+bar_3.Name = "bar_3"
+bar_3.Parent = main
+bar_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+bar_3.Position = UDim2.new(0.755000000, 0, 0.180000000, 0)
+bar_3.Size = UDim2.new(0, 120, 0, 160)
+UIbar3.Parent = bar_3
+
+tt_name.Name = "tt_name"
+tt_name.Parent = bar_1
+tt_name.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+tt_name.Size = UDim2.new(0, 120, 0, 30)
+tt_name.Position = UDim2.new(0, 0, 0.150000000, 0)
+tt_name.BackgroundTransparency = 1
+tt_name.Font = Enum.Font.Ubuntu
+tt_name.Text = "Thông Báo bản 2"
+tt_name.TextColor3 = Color3.fromRGB(255, 255, 255)
+tt_name.TextSize = 14.000
+tt_name.TextWrapped = true
+
+tt_1.Name = "tt_1"
+tt_1.Parent = bar_1
+tt_1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+tt_1.Size = UDim2.new(0, 120, 0, 30)
+tt_1.Position = UDim2.new(0, 0, 0.270000000, 0)
+tt_1.BackgroundTransparency = 1
+tt_1.Font = Enum.Font.Ubuntu
+tt_1.Text = _G.tt
+tt_1.TextColor3 = Color3.fromRGB(255, 255, 255)
+tt_1.TextSize = 14.000
+tt_1.TextWrapped = true
+
+t_1.Name = "t_1"
+t_1.Parent = bar_3
+t_1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+t_1.Size = UDim2.new(0, 120, 0, 30)
+t_1.BackgroundTransparency = 1
+t_1.Font = Enum.Font.Ubuntu
+t_1.Text = "Credit"
+t_1.TextColor3 = Color3.fromRGB(255, 255, 255)
+t_1.TextSize = 14.000
+t_1.TextWrapped = true
+
+t_2.Name = "t_2"
+t_2.Parent = bar_3
+t_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+t_2.Position = UDim2.new(0, 0, 0.150000000, 0)
+t_2.Size = UDim2.new(0, 120, 0, 30)
+t_2.BackgroundTransparency = 1
+t_2.Font = Enum.Font.Ubuntu
+t_2.Text = "   #Nguyenanutgr"
+t_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+t_2.TextSize = 14.000
+t_2.TextWrapped = true
+t_2.TextXAlignment = Enum.TextXAlignment.Left
+
+key_t.Name = "key_t"
+key_t.Parent = bar_2
+key_t.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+key_t.Position = UDim2.new(0.2, 0, 0.130000000, 0)
+key_t.Size = UDim2.new(0, 150, 0, 30)
+key_t.Font = Enum.Font.Ubuntu
+key_t.Text = "Nhập Key"
+key_t.TextColor3 = Color3.fromRGB(255, 255, 255)
+key_t.BorderColor3 = Color3.fromRGB(250, 250, 250)
+key_t.TextSize = 14.000
+
+key_tb.Name = "key_tb"
+key_tb.Parent = bar_2
+key_tb.BackgroundColor3 = Color3.fromRGB(250, 250, 250)
+key_tb.Position = UDim2.new(0.2, 0, 0.360000000, 0)
+key_tb.Size = UDim2.new(0, 150, 0, 25)
+key_tb.Font = Enum.Font.Ubuntu
+key_tb.Text = "Nhập Chìa Khóa"
+key_tb.BorderColor3 = Color3.fromRGB(0,0,0)
+key_tb.TextSize = 14.000
+
+key_b.Name = "key_b"
+key_b.Parent = bar_2
+key_b.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+key_b.Position = UDim2.new(0.2, 0, 0.550000000, 0)
+key_b.Size = UDim2.new(0, 150, 0, 27)
+key_b.Font = Enum.Font.Ubuntu
+key_b.Text = "Check Key"
+key_b.TextColor3 = Color3.fromRGB(255, 255, 255)
+key_b.BorderColor3 = Color3.fromRGB(250, 250, 250)
+key_b.TextSize = 14.000
+key_b.MouseButton1Down:connect(function()
+
+if key_tb.Text == _G.key then
+  
+    wait(2)
+
+bar.Text = "   An | Load"
+bar_4.Visible = true
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "Nguyễn An";
+    Text = "Nhập key thành công";
+    Icon = "rbxthumb://type=Asset&id=11749957186&w=150&h=150"})
+    Duration = 5;
+
+local ExecutorUsing = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "Shit exploit g"
+                    local HttpService = game:GetService("HttpService")
+                    local Data =
+                        {
+                            ["embeds"]= {
+                                {            
+                                    ["title"]= "Click here to view players profile";
+                                    ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId;
+                                    ["description"]= "```"..game.Players.LocalPlayer.DisplayName.." ("..game.Players.LocalPlayer.Name..") ```";
+                                    ["color"]= tonumber(0x7269da);
+                                    
+                                    ["fields"]= {
+                                        {
+                                            ["name"]= "Executor",
+                                            ["value"]= "```"..ExecutorUsing.."```",
+                                            ["inline"]= true
+                                        },
+                                        {
+                                            ["name"]= "Age",
+                                            ["value"]= "```"..game.Players.LocalPlayer.AccountAge.."```",
+                                            ["inline"]= true
+                                        },
+                                        {
+                                            ["name"]= "Script Starus",
+                                            ["value"]= "```Hack kesh Hub đã bật```",
+                                            ["inline"]= true
+                                        },
+                                    }              
+                                }
+                            }
+                    }
+                    local Headers = {["Content-Type"]="application/json"}
+                    local Encoded = HttpService:JSONEncode(Data)
+                    
+                    Request = http_request or request or HttpPost or syn.request
+                    local Final = {Url = "https://discord.com/api/webhooks/1102045312685711370/RNNbwi5ore2fvJJHwNsgR-bJ0V9cnMpu9zyB34FkIXoUAKwuLaFA_a7j1TOaD1Ewi4uh", Body = Encoded, Method = "POST", Headers = Headers}
+                    Request(Final)
+else
+key_tb.Text =" Sai Chìa Khóa"
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "Nguyễn An";
+    Text = "Mua key chưa mà đòi Hack";
+    Icon = "rbxthumb://type=Asset&id=11749957186&w=150&h=150"})
+    Duration = 5; 
 end
-local thieunang = game:GetService("Players").LocalPlayer.PlayerGui.Main.Fragments:Clone()
-thieunang.Parent = game:GetService("Players").LocalPlayer.PlayerGui.BubbleChat
-thieunang.Position = UDim2.new(0,6,0.85799,0)
-local n = formatNumber(game.Players.LocalPlayer.Data.Fragments.Value)
-thieunang.Text = "ƒ"..n
-print("Done")
-pcall(function() 
-    game:GetService("Players").LocalPlayer.PlayerGui.Main.MenuButton.Visible = false
-  -- game:GetService("Players").LocalPlayer.PlayerGui.Main.MenuButton:Destroy()
 end)
-pcall(function() 
-    game:GetService("Players").LocalPlayer.PlayerGui.Main.HP.Visible = false
-    --game:GetService("Players").LocalPlayer.PlayerGui.Main.HP:Destroy()
+
+key_g.Name = "key_g"
+key_g.Parent = bar_2
+key_g.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+key_g.Position = UDim2.new(0.32, 0, 0.800000000, 0)
+key_g.Size = UDim2.new(0, 100, 0, 15)
+key_g.Font = Enum.Font.Ubuntu
+key_g.Text = "Get Key"
+key_g.TextColor3 = Color3.fromRGB(255, 255, 255)
+key_g.BorderColor3 = Color3.fromRGB(250, 250, 250)
+key_g.TextSize = 14.000
+key_g.MouseButton1Down:connect(function()
+setclipboard(_G.linkkey)
 end)
-pcall(function() 
-    game:GetService("Players").LocalPlayer.PlayerGui.Main.Energy.Visible = false
-    --game:GetService("Players").LocalPlayer.PlayerGui.Main.Energy:Destroy()
-end)
-for k,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main:GetChildren()) do 
-    if v:IsA("ImageButton") then 
-        v.Visible = false
-    end
+
+bar_4.Name = "bar_4"
+bar_4.Parent = main
+bar_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+bar_4.Position = UDim2.new(0.250000000, 0, 0.180000000, 0)
+bar_4.Size = UDim2.new(0, 248, 0, 160)
+UIbar4.Parent = bar_4
+bar_4.Visible = false
+load_t.Name = "load_t"
+load_t.Parent = bar_4
+load_t.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+load_t.Position = UDim2.new(0.2, 0, 0.130000000, 0)
+load_t.Size = UDim2.new(0, 150, 0, 30)
+load_t.Font = Enum.Font.Ubuntu
+load_t.Text = "Nguyên An | Load"
+load_t.TextColor3 = Color3.fromRGB(255, 255, 255)
+load_t.BorderColor3 = Color3.fromRGB(250, 250, 250)
+load_t.TextSize = 14.000
+
+load_t1.Name = "load_t1"
+load_t1.Parent = bar_4
+load_t1.BackgroundColor3 = Color3.fromRGB(250, 250, 250)
+load_t1.Position = UDim2.new(0.2, 0, 0.360000000, 0)
+load_t1.BackgroundTransparency = 1
+load_t1.Size = UDim2.new(0, 150, 0, 25)
+load_t1.Font = Enum.Font.Ubuntu
+load_t1.Text = "             Anti Lag"
+load_t1.BorderColor3 = Color3.fromRGB(0,0,0)
+load_t1.TextColor3 = Color3.fromRGB(250, 255, 250)
+load_t1.TextSize = 14.000
+load_t1.TextXAlignment = Enum.TextXAlignment.Left
+
+load_t2.Name = "load_t2"
+load_t2.Parent = bar_4
+load_t2.BackgroundColor3 = Color3.fromRGB(250, 250, 250)
+load_t2.Position = UDim2.new(0.2, 0, 0.550000000, 0)
+load_t2.BackgroundTransparency = 1
+load_t2.Size = UDim2.new(0, 150, 0, 25)
+load_t2.Font = Enum.Font.Ubuntu
+load_t2.Text = "             Anti AFK"
+load_t2.BorderColor3 = Color3.fromRGB(0,0,0)
+load_t2.TextColor3 = Color3.fromRGB(250, 255, 250)
+load_t2.TextSize = 14.000
+load_t2.TextXAlignment = Enum.TextXAlignment.Left
+
+load_b1.Name = "load_b1"
+load_b1.Parent = load_t1
+load_b1.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+load_b1.Size = UDim2.new(0, 25, 0, 25)
+load_b1.Font = Enum.Font.Ubuntu
+load_b1.Text = ""
+load_b1.TextColor3 = Color3.fromRGB(250, 255, 250)
+load_b1.TextSize = 20.000
+load_b1.BorderColor3 = Color3.fromRGB(250, 250, 250)
+load_b1.MouseButton1Down:connect(function()
+   if load_b1.Text == "" then
+load_b1.Text = "X"
+else
+load_b1.Text = ""
 end
-pcall(function() 
-    game:GetService("Players").LocalPlayer.PlayerGui.Main.Compass:Destroy()
+end)
+
+load_b2.Name = "load_b2"
+load_b2.Parent = load_t2
+load_b2.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+load_b2.Size = UDim2.new(0, 25, 0, 25)
+load_b2.Font = Enum.Font.Ubuntu
+load_b2.Text = ""
+load_b2.TextColor3 = Color3.fromRGB(250, 255, 250)
+load_b2.TextSize = 20.000
+load_b2.BorderColor3 = Color3.fromRGB(250, 250, 250)
+load_b2.MouseButton1Down:connect(function()
+if load.b2 == "" then
+load_b2.Text = "X"
+else
+load_b2.Text = ""
+end
+end)
+
+
+load_l.Name = "load_l"
+load_l.Parent = bar_4
+load_l.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+load_l.Position = UDim2.new(0.32, 0, 0.780000000, 0)
+load_l.Size = UDim2.new(0, 100, 0, 20)
+load_l.Font = Enum.Font.Ubuntu
+load_l.Text = "Loader"
+load_l.TextColor3 = Color3.fromRGB(255, 255, 255)
+load_l.BorderColor3 = Color3.fromRGB(250, 250, 250)
+load_l.TextSize = 14.000
+load_l.MouseButton1Down:connect(function()
+game.CoreGui.UIGUI:Destroy()
+if _G.wl_key then
+return
+end
+--Put Your Key Between ''
+_G.wl_key ='340a01892b35423ea22862aaad33fdd950ad50eb'
+repeat wait()
+until game:IsLoaded()
+wait(2)
+loadstring(game:HttpGet('https://scripts.luawl.com/hosted/1989/ShowItem.lua'))()
 end)
