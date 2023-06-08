@@ -35,15 +35,15 @@ spawn(function()
              if (pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000 then
                     local Distance = (pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
                   if Distance < 500 then
-                  Speed = 750
+                  Speed = 750000
                   elseif Distance < 200 then
-                  Speed = 7000
+                  Speed = 500
                   elseif Distance < 150 then
-                  Speed = 200
+                  Speed = 1000
                   elseif Distance < 1000 then
-                        Speed = 200        
+                        Speed = 2000000        
     elseif Distance >= 1500 then
-                  Speed = 100
+                  Speed = 350
            end                                  
           
            jump()
@@ -59,11 +59,10 @@ end end end
              if (pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 2000 then
              local Distance = (pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
                   if Distance >= 0 then
-                  Speed = 9999999
+                  wait(.1)
+                  Speed = 350000000
                   end
-if game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
-game.Players.LocalPlayer.Character.Humanoid.Health = 0
-end
+
 game:GetService("TweenService"):Create(
                         game.Players.LocalPlayer.Character.HumanoidRootPart,
                         TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear),
