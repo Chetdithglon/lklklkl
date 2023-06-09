@@ -43,7 +43,7 @@ spawn(function()
                   elseif Distance < 1000 then
                         Speed = 2000000        
     elseif Distance >= 1500 then
-                  Speed = 350
+                  Speed = 35000000000000
            end                                  
           
            jump()
@@ -60,7 +60,7 @@ end end end
              local Distance = (pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
                   if Distance >= 0 then
                   wait(.1)
-                  Speed = 350000000
+                  Speed = 350
                   end
 
 game:GetService("TweenService"):Create(
