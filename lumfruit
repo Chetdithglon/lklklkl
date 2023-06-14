@@ -41,9 +41,9 @@ spawn(function()
                   elseif Distance < 150 then
                   Speed = 1000
                   elseif Distance < 1000 then
-                        Speed = 2000000        
+                        Speed = 350        
     elseif Distance >= 1500 then
-                  Speed = 35000000000000
+                  Speed = 350
            end                                  
           
            jump()
